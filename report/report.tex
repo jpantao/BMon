@@ -23,7 +23,7 @@
 \newpage
 
 \section{Introduction}
-Bonsai is  the art of growing miniatures of other species by limiting the space
+Bonsai is  the art of growing miniatures of tree species by limiting the space
 that the root has to grow and controlling meticulously the plant’s water intake.
 Bonsai trees are more delicate than the average indoor plant, and different
 species need different environments in order to achieve the wanted
@@ -85,12 +85,13 @@ photoresistor. With \texttt{n} being the number of trees, and assuming they are
 close to each other.
 
 % Which are the interactions between the system’s elements?
-The system's interactions are as follows. Sensors retrieve data from the
-environment that is then registered locally in the microcontroller. Such data is
-processed locally, its changes are reflected on the system's actuators.
-Additionally, that data is sent to a database that the application also ha
-access to. Changes on database data are reflected on the application, and thus
-provided to the user.
+The system's interactions are as follows. When the microcontroller unit is
+turned on, it connects to the internet and updates de default configuration to
+the cloud service database. Sensors retrieve data from the environment that is
+then registered locally in the microcontroller. Such data is processed locally,
+its changes are reflected on the system's actuators. Additionally, that data is
+sent to a database that the application also ha access to. Changes on database
+data are reflected on the application, and thus provided to the user.
 
 The application also does communicate with the microcontroller (i.e., through
 the cloud service provider), in our case, to send user configurations to the
@@ -236,11 +237,45 @@ The system architecture also includes a mobile application which will be used to
 register new bonsai to the system and at the same time act as a dashboard to the
 same bonsai. The mobile application is covered in the next section.
 
-\section{Mobile Application}\label{sec:mobile}
-% Explain how you have implemented your mobile application, including the server
-% counterpart (if such element exists). You must present screenshots of your
-% application and all relevant implementation details.
+\section{Mobile Application}\label{sec:mobile} For the mobile application we
+chose to implement it in android. The mobile application will mostly be used as
+a dashboard. At the same time, as presented next, the app will be able to modify
+the behaviour of the ubiquitous component.
 
+\subsection{Frontend}
+The first thing that a user observes when the app opens is the main activity. In
+this particular app, the first thing displayed is a list of the connected
+Bonsai.
+
+For each bonsai displayed the user will be able to see the measured temperature,
+humidity, luminosity and soil moist values.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/MainMenu.png}
+    \caption{Mobile app main menu.}
+    \label{fig:MainMenu}
+\end{figure}
+If the user presses on the interface's floating button he is redirected to
+another activity \ref{fig:AddBonsaiMenu}. This activity allows a user to create
+a new Bonsai in the system. It has fields for the name of the specific Bonsai
+and all the parameters related to the Bonsai conditions including, temperature,
+Humidity, luminosity and soil moist.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/AddBonsai.png}
+    \caption{Add new bonsai menu.}
+    \label{fig:AddBonsaiMenu}
+\end{figure}
+
+\subsection{Modifying the behaviour of the actuators}
+When a bonsai is added to the system the ability to humidify the bonsai when
+soil humidity value is low is turned off by default. In order to toggle between
+active and inactive states all its needed to do is to press on the selected
+bonsai in the main activity. A small android Toast notification will popup in
+the bottom of the screen notifying the user of the new status of the
+functionality.
 
 \section{Sensing and Reacting}\label{sec:sensors_actuators}
 % Explain how the system sensors and actuators are integrated within your
