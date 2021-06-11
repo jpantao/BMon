@@ -1,0 +1,42 @@
+{
+    "Japanese Maple" : {
+      "config" : {
+        "cycle_delay" : 5000,
+        "hum_high" : 75,
+        "hum_low" : 25,
+        "humidifier_on" : false,
+        "lum_high" : 75,
+        "lum_low" : 25,
+        "moist_high" : 75,
+        "moist_low" : 25,
+        "sync_interval" : 12,
+        "temp_high" : 35,
+        "temp_low" : 10
+      },
+      "humidity" : {
+        "deviceuid" : "BMon-Prototype",
+        "name" : "DHT11-Hum",
+        "type" : "Humidity",
+        "value" : 0
+      },
+      "luminosity" : {
+        "deviceuid" : "BMon-Prototype",
+        "name" : "Photoregistor",
+        "type" : "Luminosity",
+        "value" : 18.5
+      },
+      "soil_moisture" : {
+        "deviceuid" : "BMon-Prototype",
+        "name" : "Groove Moisture Sensor",
+        "type" : "Soil moisture",
+        "value" : 50
+      },
+      "temperature" : {
+        "deviceuid" : "BMon-Prototype",
+        "name" : "DHT11-Temp",
+        "type" : "Temperature",
+        "value" : 0
+      }
+    }
+  }
+  
