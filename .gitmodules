@@ -1,0 +1,6 @@
+[submodule "BMon-ESP32.git"]
+	path = BMon-ESP32
+	url = git@github.com:jpantao/BMon-ESP32.git
+[submodule "BMon-Andoid"]
+	path = BMon-Andoid
+	url = https://github.com/jpantao/BMon-Andoid
